@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geburtstagsspecial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            padding: 20px;
+            max-width: 500px;
+        }
+        h1 {
+            color: #ff6347;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Alles Gute zum Geburtstag!</h1>
+        <p>Lieber Michelo Angelo,</p>
+        <p>Heute ist ein ganz besonderer Tag, denn du feierst dein <strong>57. Geburtstag</strong>! 🎉</p>
+        <p>Ich wünsche dir von Herzen alles Glück dieser Welt, viel Freude, Gesundheit und Erfolg für das kommende Lebensjahr. Mögen all deine Wünsche in Erfüllung gehen und du jeden Moment in vollen Zügen genießen! ✨</p>
+        <p>Lass dich heute feiern und verwöhnen – du hast es verdient! 🎂</p>
+        <p>Herzlichen Glückwunsch und auf viele weitere wundervolle Jahre!</p>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28-Felder-Spiel</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(7, 100px); /* 7 Spalten */
+            grid-template-rows: repeat(4, 100px);   /* 4 Reihen */
+            gap: 5px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            border: 2px solid #333;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cell:hover {
+            background-color: #e0e0e0;
+        }
+
+        .red {
+            background-color: red;
+            color: white; /* Textfarbe auf weiß ändern, wenn rot */
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="board">
+        <!-- Generiere 28 Felder mit Zahlen von 1 bis 28 -->
+        <script>
+            for (let i = 1; i <= 28; i++) {
+                document.write('<div class="cell" data-index="' + i + '">' + i + '</div>');
+            }
+        </script>
+    </div>
+    <div class="message" id="message"></div>
+
+    <script>
+        const cells = document.querySelectorAll('.cell');
+
+        function handleCellClick(event) {
+            const cell = event.target;
+
+            // Füge die Klasse "red" hinzu, um die Farbe zu ändern
+            cell.classList.toggle('red');
+        }
+
+        cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+    </script>
+
+</body>
+</html>
